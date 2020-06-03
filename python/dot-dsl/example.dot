@@ -1,0 +1,6 @@
+graph {
+    graph [bgcolor="cyan"]
+    a [color="red"]
+    b [color="blue"]
+    a -- b [color="green"]
+}
