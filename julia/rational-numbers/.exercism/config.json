@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "rational-numbers.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Implement rational numbers.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Rational_number"
+}

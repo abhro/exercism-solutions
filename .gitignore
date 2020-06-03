@@ -1,0 +1,25 @@
+*.out
+build/
+target/
+
+# Java
+.gradle/
+
+# Julia
+Manifest.toml
+
+# Rust
+*.rs.bk
+Cargo.lock
+
+# Python
+__pycache__/
+
+# Fortran
+*.mod
+testlib/
+
+# Haskell
+leap.cabal
+stack.yaml.lock
+.stack-work/
