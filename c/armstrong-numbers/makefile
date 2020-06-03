@@ -1,4 +1,7 @@
-CFLAGS = -std=c99 -g -Wall -Wextra -Werror -pedantic -Wmissing-declarations
+LIBS = -lm
+CFLAGS  = -std=c99 -g -Wall -Wextra -pedantic -Werror -Wmissing-declarations
+CFLAGS += -DUNITY_SUPPORT_64
+ASANFLAGS  = -fsanitize=address -fno-common -fno-omit-frame-pointer
 
 test: tests.out
 	./tests.out
