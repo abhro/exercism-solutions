@@ -3,3 +3,4 @@ __pycache__/
 *.out
 target/
 Cargo.lock
+Manifest.toml
