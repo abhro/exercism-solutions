@@ -5,6 +5,7 @@ from raindrops import raindrops
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+
 class RaindropsTest(unittest.TestCase):
     def test_the_sound_for_1_is_1(self):
         self.assertEqual(raindrops(1), "1")
@@ -61,5 +62,5 @@ class RaindropsTest(unittest.TestCase):
         self.assertEqual(raindrops(12121), "12121")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

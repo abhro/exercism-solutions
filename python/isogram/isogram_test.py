@@ -5,8 +5,8 @@ from isogram import is_isogram
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.7.0
 
-class IsogramTest(unittest.TestCase):
 
+class IsogramTest(unittest.TestCase):
     def test_empty_string(self):
         self.assertIs(is_isogram(""), True)
 
@@ -52,5 +52,5 @@ class IsogramTest(unittest.TestCase):
         self.assertIs(is_isogram("Aleph Bot Chap"), False)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

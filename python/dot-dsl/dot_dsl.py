@@ -19,9 +19,11 @@ class Edge:
         self.attrs = attrs
 
     def __eq__(self, other):
-        return (self.src == other.src and
-                self.dst == other.dst and
-                self.attrs == other.attrs)
+        return (
+            self.src == other.src
+            and self.dst == other.dst
+            and self.attrs == other.attrs
+        )
 
 
 class Graph:
@@ -36,7 +38,8 @@ class Graph:
             return
         if not isinstance(data, (tuple, list)):
             raise TypeError(
-                f"expected data to be a sequence container, got {type(data)}")
+                f"expected data to be a sequence container, got {type(data)}"
+            )
 
         self.decode(data)
 
@@ -44,7 +47,7 @@ class Graph:
         "Destructure and populate internal node, edge, and attribute containers"
         for tup in data:
             if not tup:
-                raise TypeError('cannot decode empty structure')
+                raise TypeError("cannot decode empty structure")
             dtype, *args = tup
 
             if dtype == NODE:
@@ -53,22 +56,24 @@ class Graph:
                 self.add_edge(*args)
             elif dtype == ATTR:
                 if len(args) > 2:
-                    raise ValueError('too many arguments for ATTR')
+                    raise ValueError("too many arguments for ATTR")
                 self.add_node_attr(*args)
             else:
-                raise ValueError(f'bad dtype: {dtype}')
+                raise ValueError(f"bad dtype: {dtype}")
 
     def add_node(self, *args):
         if len(args) != 2:
             raise ValueError(
-                f'bad argument count for NODE, expected 2, got {len(args)}')
-        self.nodes.append(Node(*args)) # pylint: disable=no-value-for-parameter
+                f"bad argument count for NODE, expected 2, got {len(args)}"
+            )
+        self.nodes.append(Node(*args))  # pylint: disable=no-value-for-parameter
 
     def add_edge(self, *args):
         if len(args) != 3:
             raise ValueError(
-                f'bad argument count for EDGE, expected 3, got {len(args)}')
-        self.edges.append(Edge(*args)) # pylint: disable=no-value-for-parameter
+                f"bad argument count for EDGE, expected 3, got {len(args)}"
+            )
+        self.edges.append(Edge(*args))  # pylint: disable=no-value-for-parameter
 
     def add_node_attr(self, name, value):
         self.attrs[name] = value
