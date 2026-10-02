@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from threading import Lock
 
+
 class BankAccount:
     def __init__(self):
         self._balance = 0
@@ -10,7 +11,7 @@ class BankAccount:
     def _guard_closed_account(self):
         "Disallow operations on closed accounts"
         if self._closed:
-            raise ValueError('Cannot operate on closed account')
+            raise ValueError("Cannot operate on closed account")
 
     def get_balance(self):
         "Return withdrawable."
@@ -20,14 +21,14 @@ class BankAccount:
     def open(self):
         "Turn on deposit and withdrawal permissions"
         if not self._closed:
-            raise ValueError('Bank account already open')
+            raise ValueError("Bank account already open")
         self._closed = False
 
     def deposit(self, amount):
         "Deposit `amount` and add to bank account balance"
         self._guard_closed_account()
         if amount < 0:
-            raise ValueError('Illegal to deposit negative amount')
+            raise ValueError("Illegal to deposit negative amount")
         with self._lock:
             self._balance += amount
 
@@ -35,9 +36,9 @@ class BankAccount:
         "Withdraw `amount` and dock from back account"
         self._guard_closed_account()
         if amount < 0:
-            raise ValueError('Illegal to withdraw negative amount')
+            raise ValueError("Illegal to withdraw negative amount")
         if amount > self._balance:
-            raise ValueError('Account not suitable for loans')
+            raise ValueError("Account not suitable for loans")
         with self._lock:
             self._balance -= amount
 

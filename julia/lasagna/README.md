@@ -66,7 +66,7 @@ There are two common ways to define a named function in Julia:
 
     ```julia
     function muladd(x, y, z)
-        x * y + z
+        return x * y + z
     end
     ```
 

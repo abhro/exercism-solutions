@@ -1,5 +1,5 @@
-
 import re
+
 
 def encode(s: str) -> str:
     seq = []
@@ -16,15 +16,15 @@ def encode(s: str) -> str:
     seq.append(str(count))
     seq.append(current)
 
-    seq = [elem for elem in seq if elem != '1']
+    seq = [elem for elem in seq if elem != "1"]
 
-    return ''.join(seq)
+    return "".join(seq)
 
 
 def decode(s: str) -> str:
-    seq = re.split(r'(\d+)', s)
-    if '' in seq:
-        seq.remove('')
+    seq = re.split(r"(\d+)", s)
+    if "" in seq:
+        seq.remove("")
     seq = [int(elem) if elem.isdigit() else elem for elem in seq]
     seq_2 = []
     for elem in seq:
@@ -38,7 +38,7 @@ def decode(s: str) -> str:
     decoded_seq = []
     for index, token in enumerate(seq):
         if isinstance(token, int):
-            decoded_seq.append(token * seq[index+1])
-        elif index == 0 or (index != 0 and not isinstance(seq[index-1], int)):
+            decoded_seq.append(token * seq[index + 1])
+        elif index == 0 or (index != 0 and not isinstance(seq[index - 1], int)):
             decoded_seq.append(token)
-    return ''.join(decoded_seq)
+    return "".join(decoded_seq)

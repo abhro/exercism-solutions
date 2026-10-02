@@ -5,8 +5,8 @@ from space_age import SpaceAge
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
-class SpaceAgeTest(unittest.TestCase):
 
+class SpaceAgeTest(unittest.TestCase):
     def test_age_on_mercury(self):
         self.assertEqual(SpaceAge(2134835688).on_mercury(), 280.88)
 
@@ -37,5 +37,5 @@ class SpaceAgeTest(unittest.TestCase):
         self.assertEqual(SpaceAge(1e6).seconds, 1e6)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

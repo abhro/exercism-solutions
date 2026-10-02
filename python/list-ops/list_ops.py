@@ -14,7 +14,7 @@ def filter(function, list):
 
 
 def length(list):
-    return list.__len__() # ???? NOTE ?? I'm not sure how else to implement ???
+    return list.__len__()  # ???? NOTE ?? I'm not sure how else to implement ???
 
 
 def map(function, list):

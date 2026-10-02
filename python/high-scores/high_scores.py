@@ -1,4 +1,3 @@
-
 def latest(scores: list):
     return scores[-1]
 

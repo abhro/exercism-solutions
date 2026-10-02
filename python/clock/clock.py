@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class Clock:
     def __init__(self, hour: int, minute: int, second: int = 0):
         self.hour = hour
@@ -14,9 +15,9 @@ class Clock:
             self.hour %= 24
 
     def __str__(self):
-        return '%02i:%02i' % (self.hour, self.minute)
+        return "%02i:%02i" % (self.hour, self.minute)
 
-    def __eq__(self, other: 'Clock'):
+    def __eq__(self, other: "Clock"):
         return self.hour == other.hour and self.minute == other.minute
 
     def add(self, other: int):

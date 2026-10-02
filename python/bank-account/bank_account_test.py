@@ -146,8 +146,8 @@ class BankAccountTest(unittest.TestCase):
             self.assertRaisesRegex = self.assertRaisesRegexp
 
     def assertRaisesWithMessage(self, exception):
-        return self.assertRaisesRegex(exception, '.+')
+        return self.assertRaisesRegex(exception, ".+")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

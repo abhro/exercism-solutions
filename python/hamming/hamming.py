@@ -1,4 +1,3 @@
-
 def distance(str1: str, str2: str) -> int:
     """Determine Hamming distance between str1 and str2"""
     assert len(str1) == len(str2)

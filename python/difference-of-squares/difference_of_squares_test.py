@@ -5,6 +5,7 @@ from difference_of_squares import difference_of_squares, square_of_sum, sum_of_s
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
+
 class DifferenceOfSquaresTest(unittest.TestCase):
     def test_square_of_sum_1(self):
         self.assertEqual(square_of_sum(1), 1)
@@ -34,5 +35,5 @@ class DifferenceOfSquaresTest(unittest.TestCase):
         self.assertEqual(difference_of_squares(100), 25164150)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

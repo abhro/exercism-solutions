@@ -5,6 +5,7 @@ from matrix import Matrix
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.0
 
+
 class MatrixTest(unittest.TestCase):
     def test_extract_row_from_one_number_matrix(self):
         matrix = Matrix("1")
@@ -39,5 +40,5 @@ class MatrixTest(unittest.TestCase):
         self.assertEqual(matrix.column(2), [1903, 3, 4])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

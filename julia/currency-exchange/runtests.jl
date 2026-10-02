@@ -4,14 +4,14 @@ include("currency-exchange.jl")
 
 @testset verbose = true "tests" begin
     @testset "1. exchange_money" begin
-        @test isapprox(exchange_money(100000, 0.8), 125000; atol=0.1)
-        @test isapprox(exchange_money(700000, 10.0), 70000; atol=0.1)
-     end
+        @test isapprox(exchange_money(100000, 0.8), 125000; atol = 0.1)
+        @test isapprox(exchange_money(700000, 10.0), 70000; atol = 0.1)
+    end
 
     @testset "2. get_change" begin
-        @test isapprox(get_change(463000, 5000), 458000; atol=0.1)
-        @test isapprox(get_change(1250, 120), 1130; atol=0.1)
-        @test isapprox(get_change(15000, 1380), 13620; atol=0.1)
+        @test isapprox(get_change(463000, 5000), 458000; atol = 0.1)
+        @test isapprox(get_change(1250, 120), 1130; atol = 0.1)
+        @test isapprox(get_change(15000, 1380), 13620; atol = 0.1)
     end
 
     @testset "3. get_value_of_bills" begin
@@ -26,9 +26,9 @@ include("currency-exchange.jl")
     end
 
     @testset "5. get_leftover_of_bills" begin
-        @test isapprox(get_leftover_of_bills(10.1, 10), 0.1; atol=1e-8)
-        @test isapprox(get_leftover_of_bills(654321.0, 5), 1.0; atol=1e-8)
-        @test isapprox(get_leftover_of_bills(3.14, 2) , 1.14; atol=1e-8)
+        @test isapprox(get_leftover_of_bills(10.1, 10), 0.1; atol = 1.0e-8)
+        @test isapprox(get_leftover_of_bills(654321.0, 5), 1.0; atol = 1.0e-8)
+        @test isapprox(get_leftover_of_bills(3.14, 2), 1.14; atol = 1.0e-8)
     end
 
     @testset "6. exchangeable_value" begin

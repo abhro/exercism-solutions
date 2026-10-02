@@ -180,7 +180,7 @@ julia> ceil(Int, 4.3)
 Rounding to a specified number of digits after the decimal point is also possible with the `digits` keyword.
 
 ```julia-repl
-julia> round(π, digits=10)
+julia> round(π, digits = 10)
 3.1415926536
 ```
 
@@ -223,7 +223,7 @@ This function should return the value of the exchanged currency.
 
 **Note:** If your currency is USD and you want to exchange USD for EUR with an exchange rate of `1.20`, then `1.20 USD == 1 EUR`.
 
-```julia
+```julia-repl
 julia> exchange_money(127.5, 1.2)
 106.25
 ```
@@ -237,7 +237,7 @@ Create the `get_change()` function, taking 2 parameters:
 
 This function should return the amount of money that *is left* from the budget.
 
-```julia
+```julia-repl
 julia> get_change(127.5, 120)
 7.5
 ```
@@ -254,7 +254,7 @@ The total you receive must be divisible by the value of one "bill" or unit, whic
 Your function should return only the total value of the bills (_excluding fractional amounts_) the booth would give back.
 Unfortunately, the booth gets to keep the remainder/change as an added bonus.
 
-```julia
+```julia-repl
 julia> get_value_of_bills(5, 128)
 640
 ```
@@ -268,7 +268,7 @@ In other words:  How many _whole bills_ of currency fit into the starting amount
 Remember -- you can only receive _whole bills_, not fractions of bills, so remember to divide accordingly.
 Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 
-```julia
+```julia-repl
 julia> get_number_of_bills(127.5, 5)
 25
 ```
@@ -280,7 +280,7 @@ Create the `get_leftover_of_bills()` function, taking `amount` and `denomination
 This function should return the _leftover amount_ that cannot be returned from your starting _amount_ given the denomination of bills.
 It is very important to know exactly how much the booth gets to keep.
 
-```julia
+```julia-repl
 julia> get_leftover_of_bills(127.5, 20)
 7.5
 ```
@@ -298,11 +298,11 @@ Remember that the currency *denomination* is a whole number, and cannot be sub-d
 
 **Note:** Returned value should be an integer type.
 
-```julia
-julia> exchangeable_value(127.25, 1.20, 10, 20)
+```julia-repl
+julia> exchangeable_value(127.25, 1.2, 10, 20)
 80
 
-julia> exchangeable_value(127.25, 1.20, 10, 5)
+julia> exchangeable_value(127.25, 1.2, 10, 5)
 95
 ```
 
