@@ -73,7 +73,7 @@ Note that exponentiation uses `^`, _not_ `**` (both are common in other language
 2 * 3  # 6 (multiplication)
 8 / 2  # 4.0 (division)
 8 % 3  # 2 (remainder)
-2 ^ 3  # 8 (exponentiation)
+2^3  # 8 (exponentiation)
 ```
 
 However, a few Julia-specific details are worth discussing.
