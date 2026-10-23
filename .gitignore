@@ -18,3 +18,8 @@ __pycache__/
 # Fortran
 *.mod
 testlib/
+
+# Haskell
+leap.cabal
+stack.yaml.lock
+.stack-work/
