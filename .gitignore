@@ -1,6 +1,16 @@
-__pycache__/
-.gradle/
 *.out
+build/
 target/
-Cargo.lock
+
+# Java
+.gradle/
+
+# Julia
 Manifest.toml
+
+# Rust
+*.rs.bk
+Cargo.lock
+
+# Python
+__pycache__/
