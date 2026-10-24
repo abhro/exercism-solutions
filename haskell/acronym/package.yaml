@@ -1,0 +1,23 @@
+name: acronym
+version: 1.7.0.11
+
+dependencies:
+  - base
+
+library:
+  exposed-modules: Acronym
+  source-dirs: src
+  ghc-options: -Wall
+  dependencies:
+    - regex-base
+    - regex-compat
+    - regex-pcre
+    - regex-posix
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - acronym
+      - hspec
