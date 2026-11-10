@@ -90,7 +90,7 @@ julia> [(kv.first, kv.second) for kv in d]
 
 Often, we want to use just the keys or just the values, which is easy.
 
-```juliajulia> [k for k in keys(d)]
+```julia-repl
 julia> [k for k in keys(d)]
 3-element Vector{Int64}:
  4

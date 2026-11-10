@@ -9,8 +9,7 @@ function get_leftover_of_bills(amount, denomination)
 end
 
 function exchangeable_value(budget, exchange_rate, spread, denomination)
-    error("Bugfix stage")
-    amount_exchanged = denomination * get_number_of_bills(budget, denomination)
-    fee = spread / 100 * amount_exchanged
-    return amount_exchanged + fee
+    real_rate = exchange_rate * (1 + spread / 100)
+    complete_exchange = exchange_money(budget, real_rate)
+    return denomination * get_number_of_bills(complete_exchange, denomination)
 end
