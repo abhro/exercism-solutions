@@ -1,4 +1,8 @@
-encode(input) = join(encode.(filter(c -> isletter(c) || isdigit(c), collect(input))))
+function encode(input)
+    clean_input = filter(c -> isletter(c) || isdigit(c), input)
+    ciphertext = join(encode.(collect(clean_input)))
+    return join(collect(Iterators.partition(ciphertext, 5)), " ")
+end
 
 function encode(input::AbstractChar)
     if isletter(input)
@@ -12,4 +16,4 @@ function encode(input::AbstractChar)
     end
 end
 
-decode(input) = join(encode.(collect(replace(input, r"\s" => ""))))
+decode(input) = join(encode.(collect(filter(!isspace, input))))

@@ -20,22 +20,22 @@ Because they have been a standard type in Julia since the early versions, most f
 Creation is as simple as using `//` between two integers.
 
 ```julia-repl
-julia> 3//4
+julia> 3 // 4
 3//4
 
 julia> a = 3; b = 4;
 
-julia> a//b
+julia> a // b
 3//4
 ```
 
 Common factors are automatically removed, converting the fraction to its "lowest terms": the smallest integers that accurately represent the fraction, and with a non-negative denominator.
 
 ```julia-repl
-julia> 5//15
+julia> 5 // 15
 1//3
 
-julia> 5//-15
+julia> 5 // -15
 -1//3
 ```
 
@@ -50,25 +50,25 @@ If a `float` is desired, simply use the `float()` function to convert a rational
 It is quite normal to use rational numbers to preserve precision through a long calculation, then convert to a float at the end.
 
 ```julia-repl
-julia> 3//4 + 1//3  # addition
+julia> 3 // 4 + 1 // 3  # addition
 13//12
 
-julia> 3//4 * 1//3  # multiplication
+julia> 3 // 4 * 1 // 3  # multiplication
 1//4
 
-julia> 3//4 / 1//3  # division
+julia> 3 // 4 / 1 // 3  # division
 9//4
 
-julia> 3//4 ^ 2  # exponentiation
+julia> 3 // 4^2  # exponentiation
 3//16
 
-julia> 3//4 + 5  # rational and int => rational
+julia> 3 // 4 + 5  # rational and int => rational
 23//4
 
-julia> 3//4 + 5.3  # rational and float => float
+julia> 3 // 4 + 5.3  # rational and float => float
 6.05
 
-julia> float(3//4)  # casting
+julia> float(3 // 4)  # casting
 0.75
 ```
 
@@ -80,27 +80,27 @@ The compiler will usually convert types as necessary.
 However, beware that comparisons work for fractions with a finite decimal representation:
 
 ```julia-repl
-julia> 3//4 == 0.75
+julia> 3 // 4 == 0.75
 true
 
-julia> 3//4 < 0.74
+julia> 3 // 4 < 0.74
 false
 ```
 
 But, otherwise, a `Rational` should be cast to a `Float` for comparisons:
 
 ```julia-repl
-julia> 1//3 == 1/3
+julia> 1 // 3 == 1 / 3
 false
 
-julia> float(1//3) == 1/3
+julia> float(1 // 3) == 1 / 3
 true
 ```
 
 Mathematical functions take rationals as input, but may give a floating-point result:
 
 ```julia-repl
-julia> sqrt(9//16)
+julia> sqrt(9 // 16)
 0.75
 ```
 

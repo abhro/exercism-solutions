@@ -121,10 +121,10 @@ The Player composite type should contain four fields, each having a type annotat
 julia> defaultplayer = Player()
 Player(missing, 0, 100, nothing)
 
-julia> wealthyplayer = Player(mana=100)
+julia> wealthyplayer = Player(mana = 100)
 Player(missing, 0, 100, 100)
 
-julia> namedplayer = Player(name="Guilian", level=10)
+julia> namedplayer = Player(name = "Guilian", level = 10)
 Player("Guilian", 10, 100, nothing)
 ```
 
@@ -136,10 +136,10 @@ Stealthy players may be hiding their name and will be introduced as `"Mighty Mag
 Otherwise, just use the player's name to introduce them.
 
 ```julia-repl
-julia> introduce(Player(level=2, health=8))
+julia> introduce(Player(level = 2, health = 8))
 "Mighty Magician"
 
-julia> introduce(Player(name="Merlin", level=2, health=8))
+julia> introduce(Player(name = "Merlin", level = 2, health = 8))
 "Merlin"
 ```
 
@@ -155,13 +155,13 @@ The `increment` method for names should take a player's `name`.
 This `increment` method returns the new name.
 
 ```julia-repl
-julia> player1 = Player(name="Ogre", level=5, health=49, mana=26)
+julia> player1 = Player(name = "Ogre", level = 5, health = 49, mana = 26)
 Player("Ogre", 5, 49, 26)
 
 julia> increment(player1.name)
 "Ogre the Great"
 
-julia> player2 = Player(level=32, mana=57)
+julia> player2 = Player(level = 32, mana = 57)
 Player(missing, 32, 100, 57)
 
 julia> increment(player2.name)
@@ -175,13 +175,13 @@ The `increment` method for mana should take a player's `mana`.
 This `increment` method returns the updated mana.
 
 ```julia-repl
-julia> player3 = Player(level=3)
+julia> player3 = Player(level = 3)
 Player(missing, 3, 100, nothing)
 
 julia> increment(player3.mana)
 50
 
-julia> player4 = Player("Goblin", level=15, health=49, mana=26)
+julia> player4 = Player("Goblin", level = 15, health = 49, mana = 26)
 Player("Goblin", 5, 49, 26)
 
 julia> increment(player4.mana)
@@ -198,7 +198,7 @@ The highest level in the game is `42`.  To recognize the accomplishment of playe
 In either case, the `title!` function returns the player's name.
 
 ```julia-repl
-julia> player1 = Player(level=42, health=12)
+julia> player1 = Player(level = 42, health = 12)
 Player(missing, 42, 12, nothing)
 
 julia> title!(player1)
@@ -207,7 +207,7 @@ julia> title!(player1)
 julia> player1.name
 "The Great"
 
-julia> player2 = Player(name="Svengali", level=42, health=36, mana=54)
+julia> player2 = Player(name = "Svengali", level = 42, health = 36, mana = 54)
 Player("Svengali", 42, 36, 54)
 
 julia> title!(player2)
@@ -216,7 +216,7 @@ julia> title!(player2)
 julia> player2.name
 "Svengali the Great"
 
-julia> player3 = Player(name="Rasputin", level=21, health=100, mana=54)
+julia> player3 = Player(name = "Rasputin", level = 21, health = 100, mana = 54)
 Player("Rasputin", 21, 100, 54)
 
 julia> title!(player3)
@@ -239,19 +239,19 @@ If the player is  alive, nothing happens to the player
 The `revive!` function should return the player.
 
 ```julia-repl
-julia> deadplayer1 = Player(level=2, health=0)
+julia> deadplayer1 = Player(level = 2, health = 0)
 Player(missing, 2, 0, nothing)
 
 julia> revive!(deadplayer1)
 Player(missing, 2, 100, 50)
 
-julia> deadplayer2 = Player(level=12, health=0, mana=5)
+julia> deadplayer2 = Player(level = 12, health = 0, mana = 5)
 Player(missing, 12, 0, 5)
 
 julia> revive!(deadplayer2)
 Player(missing, 12, 100, 105)
 
-julia> aliveplayer = Player(level=23, health=1)
+julia> aliveplayer = Player(level = 23, health = 1)
 Player(missing, 23, 1, nothing)
 
 julia> revive!(aliveplayer)

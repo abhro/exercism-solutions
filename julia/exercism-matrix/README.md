@@ -236,17 +236,17 @@ julia> m
 julia> sum(m)  # sum everything
 21
 
-julia> sum(m; dims=1)  # sum down
+julia> sum(m; dims = 1)  # sum down
 1×3 Matrix{Int64}:
  5  7  9
 
-julia> sum(m; dims=2)  # sum across
+julia> sum(m; dims = 2)  # sum across
 2×1 Matrix{Int64}:
   6
  15
 
 # other aggregation functions are similar
-julia> maximum(m; dims=2)
+julia> maximum(m; dims = 2)
 2×1 Matrix{Int64}:
  3
  6

@@ -68,10 +68,10 @@ We normally think of the function arguments in `f(2, 3)` as two separate items, 
 This is true even for a single argument (though we need to add a comma to make this clearer):
 
 ```julia-repl
-julia> typeof( (2, 3) )
+julia> typeof((2, 3))
 Tuple{Int64, Int64}
 
-julia> typeof( (2,) )
+julia> typeof((2,))
 Tuple{Int64}
 ```
 
@@ -181,7 +181,7 @@ The above example requires both arguments to use the same type `T`, whatever tha
 We can be more specific by putting a constraint on `T`:
 
 ```julia-repl
-julia> same_type(v::Vector{T}, x::T) where {T<:Number} = true
+julia> same_type(v::Vector{T}, x::T) where {T <: Number} = true
 same_type (generic function with 2 methods)
 ```
 

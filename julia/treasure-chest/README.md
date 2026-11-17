@@ -54,8 +54,8 @@ This can be achieved with a dummy type in the definition, usually called `T`.
 
 ```julia-repl
 julia> struct Point{T}
-               x::T
-               y::T
+           x::T
+           y::T
        end
 
 # high definition version

@@ -84,10 +84,10 @@ julia> @kwdef struct KwPerson
        end
 KwPerson
 
-julia> suki = KwPerson(age=29, name="Suki")
+julia> suki = KwPerson(age = 29, name = "Suki")
 KwPerson("Suki", 29)
 
-julia> qi = KwPerson(name="Qi")
+julia> qi = KwPerson(name = "Qi")
 KwPerson("Qi", 42)
 
 # create a Vector{KwPerson}
@@ -119,10 +119,10 @@ Next, include a `<:` operator in a type definition, to show the relationship.
 
 ```julia-repl
 julia> struct ConcretePerson <: AbstractPerson
-            id
-            name::String
-            age::Integer
-        end
+           id
+           name::String
+           age::Integer
+       end
 
 julia> supertype(ConcretePerson)
 AbstractPerson
@@ -176,7 +176,7 @@ Implement the `Plot` struct, taking two Coord structs in its constructor.
 `Plot` should be a keyword struct, with fields `bottom_left` and `top_right`.
 
 ```julia-repl
-julia> plot = Plot(bottom_left=Coord(10, 1), top_right=Coord(20, 2))
+julia> plot = Plot(bottom_left = Coord(10, 1), top_right = Coord(20, 2))
 Plot(Coord(0x000a, 0x0001), Coord(0x0014, 0x0002))
 
 julia> plot.top_right
@@ -190,7 +190,7 @@ There is competition for these claims, so before your claim is allowed it will b
 Implement the `is_claim_staked()` function to determine whether a claim has already been staked.
 
 ```julia-repl
-julia> claim = Plot(bottom_left=Coord(10, 1), top_right=Coord(20, 2));
+julia> claim = Plot(bottom_left = Coord(10, 1), top_right = Coord(20, 2));
 julia> register = Set{Plot}();
 julia> is_claim_staked(claim, register)
 false
@@ -205,7 +205,7 @@ If the same claim has already been staked, return `false`.
 If a new claim is possible, add it to the register and return `true`.
 
 ```julia-repl
-julia> claim = Plot(bottom_left=Coord(10, 1), top_right=Coord(20, 2));
+julia> claim = Plot(bottom_left = Coord(10, 1), top_right = Coord(20, 2));
 julia> register = Set{Plot}();
 julia> stake_claim!(claim, register)
 true
@@ -227,8 +227,8 @@ julia> get_longest_side(claim)
 Implement the `get_claim_with_longest_side()` function to examine all registered claims and return the claim(s) with the longest side.
 
 ```julia-repl
-julia> plot1 = Plot(bottom_left=Coord(5, 3), top_right=Coord(10, 5));
-julia> plot2 = Plot(bottom_left=Coord(0, 0), top_right=Coord(3, 3));
+julia> plot1 = Plot(bottom_left = Coord(5, 3), top_right = Coord(10, 5));
+julia> plot2 = Plot(bottom_left = Coord(0, 0), top_right = Coord(3, 3));
 julia> register = Set{Plot}([plot1, plot2]);
 
 julia> get_claim_with_longest_side(register)

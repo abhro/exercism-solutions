@@ -102,7 +102,7 @@ julia> transpose(m)
  2  5
  3  6
 
-julia> mc = [1+2im 2+3im; 3+2im 1+2im]
+julia> mc = [1 + 2im 2 + 3im; 3 + 2im 1 + 2im]
 2×2 Matrix{Complex{Int64}}:
  1+2im  2+3im
  3+2im  1+2im
@@ -337,13 +337,13 @@ julia> i_hat = [1, 0]
  0
 
 # rotate 45 degrees
-julia> rot2d(π/4, i_hat)
+julia> rot2d(π / 4, i_hat)
 2-element Vector{Float64}:
  0.7071067811865476
  0.7071067811865475
 
 # rotate 90 degrees -> unit vector in the y direction, j_hat
-julia> rot2d(π/2, i_hat)
+julia> rot2d(π / 2, i_hat)
 2-element Vector{Float64}:
  6.123233995736766e-17  # zero, within numerical error
  1.0
@@ -363,7 +363,7 @@ Implement the `orientrobot(vectors)` function, which takes a vector of three vec
 Return a `2x3` matrix with the normalized vectors as columns.
 
 ```julia-repl
-julia> orientrobot([[-1,1],[1,0],[-1,-1]])
+julia> orientrobot([[-1, 1], [1, 0], [-1, -1]])
 2×3 Matrix{Float64}:
  -0.707107  1.0  -0.707107
   0.707107  0.0  -0.707107
@@ -378,9 +378,9 @@ Implement the `rotaterobot(orientation, θ)` function, which takes the robot's o
 Return the new orientation matrix.
 
 ```julia-repl
-julia> orientmatrix = initialize([[-1,1],[1,0],[-1,-1]]);
+julia> orientmatrix = initialize([[-1, 1], [1, 0], [-1, -1]]);
 
-julia> rotaterobot(orientmatrix, π/2)
+julia> rotaterobot(orientmatrix, π / 2)
 2×3 Matrix{Float64}:
  -0.707107  6.12323e-17   0.707107
  -0.707107  1.0          -0.707107
@@ -395,7 +395,7 @@ Implement the `robotoriented(orientation, direction)` function, which takes an o
 Return `true` if the robot is oriented in the same direction as the relative position vector (within rounding error).
 
 ```julia-repl
-julia> orientmatrix = initialize([[-1,1],[1,0],[-1,-1]]);
+julia> orientmatrix = initialize([[-1, 1], [1, 0], [-1, -1]]);
 
 julia> robotoriented(orientmatrix, [5, 0])
 true
@@ -416,7 +416,7 @@ Implement the `bodylocation(orientation, position)` function, which takes an ori
 Return the translated orientation matrix.
 
 ```julia-repl
-julia> orientmatrix = initialize([[-1,1],[1,0],[-1,-1]]);
+julia> orientmatrix = initialize([[-1, 1], [1, 0], [-1, -1]]);
 
 julia> bodylocation(orientmatrix, [5, 3])
 2×3 Matrix{Float64}:
