@@ -23,3 +23,6 @@ testlib/
 leap.cabal
 stack.yaml.lock
 .stack-work/
+
+# OCaml
+_build/
