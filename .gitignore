@@ -2,6 +2,9 @@
 build/
 target/
 
+# CMake
+CMakeCache.txt
+
 # Java
 .gradle/
 
