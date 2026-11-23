@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "andrej-makarov-skrt",
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "hamming.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Calculate the Hamming distance between two DNA strands.",
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "https://rosalind.info/problems/hamm/"
+}
